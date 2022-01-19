@@ -13,7 +13,7 @@ DOMAIN=$1;
 DOMAIN_A_RECORDS=$(dig A +short ${DOMAIN});
 
 # We only need one IP address
-FIRST_A_RECORD=$(echo ${DOMAIN_A_RECORDS} | cut -d ' ' -f 1);
+FIRST_A_RECORD=$(echo ${DOMAIN_A_RECORDS} | head -n 1);
 
 # Query IPinfo.io for the details
 # IPINFO_ACCESS_TOKEN is an evironment variable
